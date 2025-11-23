@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fifth Floor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading videos...</div>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landingPage">
+        <div class="landing-content">
+            <div class="landing-text">CLICK BELOW TO START EXPERIENCE</div>
+            <button class="landing-button" id="startButton">Start</button>
+        </div>
+    </div>
+
+    <!-- Video Container -->
+    <div id="videoContainer">
+        <video id="mainVideo" preload="auto">
+            <source src="assets/videos/SCENE1_INTRODUCTION.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Play/Pause Overlay -->
+    <div id="playPauseOverlay">
+        <svg class="play-pause-icon" viewBox="0 0 24 24" id="playPauseIcon">
+            <path id="playPath" d="M8 5.5 Q8 5 8.7 5.2 L18.2 11 Q19 11.5 18.2 12 L8.7 18.8 Q8 19 8 18.5 L8 5.5 Z" stroke="none" stroke-width="0"/>
+            <rect id="pausePath1" x="6" y="4" width="4" height="16" rx="1.5" ry="1.5" style="display: none;"/>
+            <rect id="pausePath2" x="14" y="4" width="4" height="16" rx="1.5" ry="1.5" style="display: none;"/>
+        </svg>
+    </div>
+
+    <!-- Video Controls -->
+    <div id="videoControls">
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="volume-container">
+            <svg class="volume-icon" viewBox="0 0 24 24">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+        </div>
+    </div>
+
+    <!-- Choice Boxes Container -->
+    <div id="choiceContainer">
+        <div class="choice-boxes-wrapper" id="choiceBoxesWrapper">
+            <!-- Choice boxes will be dynamically generated -->
+        </div>
+    </div>
+
+    <!-- Final Screen -->
+    <div id="finalScreen">
+        <div class="final-message">The End</div>
+        <button class="restart-button" id="restartButton">RESTART?</button>
+    </div>
+
+    <!-- Choices background audio -->
+    <audio id="choicesAudio" preload="auto" loop>
+        <source src="assets/sounds/choices.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hidden videos for preloading -->
+    <video class="hidden-video" id="choice1Elevator" preload="auto">
+        <source src="assets/videos/CHOICE_POINT1_ELEVATOR.mp4" type="video/mp4">
+    </video>
+    <video class="hidden-video" id="choice1StairsDown" preload="auto">
+        <source src="assets/videos/CHOICE_POINT1_STAIRS_DOWN.mp4" type="video/mp4">
+    </video>
+    <video class="hidden-video" id="choice2Lounge" preload="auto">
+        <source src="assets/videos/CHOICE_POINT2_LOUNGE.mp4" type="video/mp4">
+    </video>
+    <video class="hidden-video" id="choice2StairsUp" preload="auto">
+        <source src="assets/videos/CHOICE_POINT2_STAIRS_UP.mp4" type="video/mp4">
+    </video>
+    <video class="hidden-video" id="choice3OtherStairsDown" preload="auto">
+        <source src="assets/videos/CHOICE_POINT3_OTHER_STAIRS_DOWN.mp4" type="video/mp4">
+    </video>
+    <video class="hidden-video" id="choice3Lounge" preload="auto">
+        <source src="assets/videos/CHOICE_POINT3_LOUNGE.mp4" type="video/mp4">
+    </video>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

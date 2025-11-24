@@ -264,7 +264,7 @@ function preloadVideo({ element, name }) {
 // Initialize loading text
 const loadingText = document.querySelector('.loading-text');
 if (loadingText) {
-    loadingText.textContent = `Loading videos... 0/${videosToLoad.length} (0%)`;
+    loadingText.textContent = `Loading... 0/${videosToLoad.length} (0%)`;
 }
 
 // Preload all videos
